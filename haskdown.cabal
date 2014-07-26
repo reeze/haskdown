@@ -1,0 +1,41 @@
+name:                    haskdown
+version:                 0.1.0.0
+-- synopsis:            
+-- description:         
+homepage:                http://reeze.cn
+license:                 MIT
+license-file:            LICENSE
+author:                  Reeze Xia
+maintainer:              reeze.xia@gmail.com
+-- copyright:           
+category:                Web
+build-type:              Simple
+cabal-version:           >=1.8
+
+Data-Files:
+                        -- default static files
+						site/index.html
+
+Source-repository head
+  type:                  git
+  location:              git://github.com/reeze/haskdown.git
+
+Library
+  Build-Depends:         base == 4.6.*,
+                         yaml > 0.8.8.2 && < 0.9,
+                         markdown,
+                         blaze-html,
+                         text >= 0.11,
+                         hamlet >= 1.2.0
+
+executable haskdown
+  Main-Is:               haskdown.hs
+  Build-Depends:         base == 4.6.*,
+                         haskdown,
+                         text >= 0.11,
+                         blaze-html,
+                         yaml > 0.8.8.2 && < 0.9,
+                         markdown,
+                         webserver,
+                         fsnotify
+
